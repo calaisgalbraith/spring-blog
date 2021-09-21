@@ -8,26 +8,26 @@ public class MathController {
 
     @GetMapping(path = "/add/{num1}/and/{num2}")
     @ResponseBody
-    public String add(@PathVariable int num1, @PathVariable int num2){
-        return num1 + " plus " + num2 + " is " + (num1 + num2);
+    public int add(@PathVariable int num1, @PathVariable int num2){
+        return num1 + num2;
     }
 
     @GetMapping(path = "/subtract/{num1}/from/{num2}")
     @ResponseBody
-    public String subtract(@PathVariable int num1, @PathVariable int num2){
-        return num2 + " minus " + num1 + " is " + (num2 - num1);
+    public int subtract(@PathVariable int num1, @PathVariable int num2){
+        return num2 - num1;
     }
 
     @GetMapping(path = "/multiply/{num1}/and/{num2}")
     @ResponseBody
-    public String multiply(@PathVariable int num1, @PathVariable int num2){
-        return num1 + " times  " + num2 + " is " + (num1 * num2);
+    public int multiply(@PathVariable int num1, @PathVariable int num2){
+        return num1 * num2;
     }
 
     @GetMapping(path = "/divide/{num1}/by/{num2}")
     @ResponseBody
-    public String divide(@PathVariable int num1, @PathVariable int num2){
-        return num1 + " divided by " + num2 + " is " + (num1 / num2);
+    public int divide(@PathVariable int num1, @PathVariable int num2){
+        return num1 / num2;
     }
 
 }
