@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!--<head th:replace="partials/head :: head('Spring Blog | View All Posts')">-->
-<head>
-<meta charset="UTF-8">
-    <title>Index</title>
-</head>
+<head th:replace="partials/head :: head('Spring Blog | View All Posts')"></head>
 <body>
 
-<!--<nav th:replace="partials/navbar :: navbar"></nav>-->
+<nav th:replace="partials/navbar :: navbar"></nav>
 
     <div th:each="post : ${posts}">
         <h2 th:text="${post.title}"></h2>
         <h3 th:text="${post.body}"></h3>
     </div>
+
+<footer th:replace="partials/footer :: footer"></footer>
 </body>
 </html>

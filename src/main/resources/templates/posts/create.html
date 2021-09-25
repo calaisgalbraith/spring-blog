@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!--<head th:replace="partials/head :: head('Spring Blog | View All Posts')">-->
-<head>
-    <meta charset="UTF-8">
-    <title>Create</title>
-</head>
+<head th:replace="partials/head :: head('Spring Blog | Create New Post')"></head>
 <body>
+
+<nav th:replace="partials/navbar :: navbar"></nav>
 
 <h1>Create A New Post!</h1>
 
@@ -21,7 +19,7 @@
     <button class="btn btn-success">Submit</button>
 </form>
 
-<!--<nav th:replace="partials/navbar :: navbar"></nav>-->
+<footer th:replace="partials/footer :: footer"></footer>
 
 </div>
 </body>

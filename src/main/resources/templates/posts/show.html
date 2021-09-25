@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('Spring Blog | View Individual Post')">
-    <meta charset="UTF-8">
-    <title>Show</title>
-</head>
+<head th:replace="partials/head :: head('Spring Blog | View Individual Post')"></head>
 <body>
 
 <nav th:replace="partials/navbar :: navbar"></nav>
@@ -13,6 +10,6 @@
     <div th:text="${post.body}"></div>
 </div>
 
-
+<footer th:replace="partials/footer :: footer"></footer>
 </body>
 </html>
