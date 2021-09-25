@@ -18,17 +18,13 @@ public class DiceController {
 
     @GetMapping("/roll-dice/{n}")
     public String rollDice(@PathVariable int n, Model model) {
+        Random random = new Random();
+        int rand = random.nextInt((6 - 1) + 1) + 1;
+
         model.addAttribute("guess", n);
-        model.addAttribute("roll", randomNumber());
+        model.addAttribute("roll", rand);
         return "roll-answer";
     }
-
-    private int randomNumber(){
-        Random random = new Random();
-        return random.nextInt((6 - 1) + 1) + 1;
-    }
-
-
 
 
 }
