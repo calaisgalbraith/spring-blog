@@ -9,6 +9,7 @@
     <div th:text="${post.id}">Id</div>
     <div th:text="${post.title}"></div>
     <div th:text="${post.body}"></div>
+    <div th:text="${'Created By: ' + post.user.email}"></div>
     <a th:href="@{|/posts/edit/${post.id}|}">Edit Post</a>
 </div>
 
