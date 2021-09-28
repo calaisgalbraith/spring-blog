@@ -7,13 +7,13 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Column(nullable = false)
@@ -24,7 +24,6 @@ public class User {
 
     public User(){}
 
-    //TODO hash password?
     public User(String email, String username, String password){
         this.email = email;
         this.username = username;
@@ -61,5 +60,13 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }
