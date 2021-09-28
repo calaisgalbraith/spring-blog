@@ -3,7 +3,9 @@ package com.codeup.springblog.controllers;
 import com.codeup.springblog.models.User;
 import com.codeup.springblog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,15 +19,13 @@ public class UserController {
     }
 
     @GetMapping(path = "/user/create")
-    public String ShowCreateUserForm(){
+    public String ShowCreateUserForm(Model model){
+        model.addAttribute("user", new User());
         return "user/create";
     }
 
     @PostMapping(path = "/user/create")
-    public String createUser(@RequestParam(name = "username") String username,
-                             @RequestParam(name = "password") String password,
-                             @RequestParam(name = "email") String email){
-        User user = new User(email, username, password);
+    public String createUser(@ModelAttribute User user){
         userDao.save(user);
         return "redirect:/posts";
     }
