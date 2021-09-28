@@ -6,22 +6,37 @@ import javax.persistence.*;
 @Table(name = "posts")
 public class Post {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
 
     public Post() {
+    }
+
+    public Post(long id, String title, String body) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
     }
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+    }
+
+    public Post(String title, String body, User user) {
+        this.title = title;
+        this.body = body;
+        this.user = user;
     }
 
     public String getTitle() {
@@ -39,7 +54,6 @@ public class Post {
     public void setBody(String body) {
         this.body = body;
     }
-
 
     public void setId(Long id) {
         this.id = id;
