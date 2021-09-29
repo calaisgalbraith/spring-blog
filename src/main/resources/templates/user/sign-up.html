@@ -7,7 +7,7 @@
 
 <h1>Create An Account!</h1>
 
-<form th:action="@{|/user/create|}" th:method="post" th:object="${user}">
+<form th:action="@{|/sign-up|}" th:method="post" th:object="${user}">
     <div class="container">
         <label for="email">Email</label>
         <input type="text" id= "email" placeholder="Enter Email"th:field="*{email}" required>

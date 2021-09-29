@@ -30,6 +30,13 @@ public class User {
         this.password = password;
     }
 
+    public User(User copy) {
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -69,4 +76,6 @@ public class User {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+
 }
