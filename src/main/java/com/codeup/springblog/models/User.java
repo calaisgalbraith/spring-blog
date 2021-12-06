@@ -77,5 +77,4 @@ public class User {
         this.posts = posts;
     }
 
-
 }
